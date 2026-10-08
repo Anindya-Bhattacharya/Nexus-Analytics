@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+  <defs>
+    <linearGradient id="fav-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#28E0B0"/>
+      <stop offset="100%" stop-color="#4A7FE8"/>
+    </linearGradient>
+    <linearGradient id="fav-blue" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5B8CF0" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#10141D" stop-opacity="0.6"/>
+    </linearGradient>
+    <linearGradient id="fav-top" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4A7FE8" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#28E0B0" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background base -->
+  <rect width="80" height="80" rx="18" fill="#0B0E14"/>
+
+  <!-- Outer Hexagon Frame -->
+  <polygon points="40,8 70,24 70,56 40,72 10,56 10,24" fill="none" stroke="url(#fav-cyan)" stroke-width="3" stroke-linejoin="round"/>
+
+  <!-- Inner Isometric Facets -->
+  <polygon points="40,20 60,30 40,40 20,30" fill="url(#fav-top)" stroke="#28E0B0" stroke-width="1.2" stroke-opacity="0.7"/>
+  <polygon points="20,30 40,40 40,60 20,50" fill="url(#fav-blue)" stroke="#4A7FE8" stroke-width="1.2" stroke-opacity="0.7"/>
+  <polygon points="40,40 60,30 60,50 40,60" fill="url(#fav-cyan)" fill-opacity="0.3" stroke="url(#fav-cyan)" stroke-width="1.2" stroke-opacity="0.8"/>
+
+  <!-- Vertex Node Dots -->
+  <circle cx="40" cy="8" r="3" fill="#F5F3EE"/>
+  <circle cx="70" cy="24" r="3" fill="#F5F3EE"/>
+  <circle cx="70" cy="56" r="3" fill="#F5F3EE"/>
+  <circle cx="40" cy="72" r="3" fill="#F5F3EE"/>
+  <circle cx="10" cy="56" r="3" fill="#F5F3EE"/>
+  <circle cx="10" cy="24" r="3" fill="#F5F3EE"/>
+
+  <!-- Glowing Central Core -->
+  <circle cx="40" cy="40" r="7" fill="#28E0B0"/>
+  <circle cx="40" cy="40" r="3" fill="#FFFFFF"/>
+</svg>
+

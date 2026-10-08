@@ -1,0 +1,67 @@
+export const team = [
+  {
+    id: 'rupankar',
+    name: 'Rupankar Podder',
+    role: 'Frontend Development, Database & Authentication',
+    focus: 'Fully designs and builds the frontend experience, manages database architecture, and engineers secure authentication systems.',
+    stack: ['React', 'Vite', 'Database Management', 'Authentication', 'JavaScript', 'CSS', 'Framer Motion'],
+    node: '01',
+    photo: '/rupankar.jpg',
+    phone: '+918240656131',
+    email: 'rpodder2019@gmail.com',
+    linkedin: 'https://www.linkedin.com/in/rupankar-podder/',
+  },
+
+  {
+    id: 'manish',
+    name: 'Manish Maiti',
+    role: 'Data Preprocessing, Collection & Modeling',
+    focus: 'Leads end-to-end data collection, preprocessing pipelines, and relational data modeling — structuring raw data into query-ready models.',
+    stack: ['Data Preprocessing', 'Data Collection', 'Data Modeling', 'Power BI', 'SQL'],
+    node: '02',
+    photo: '/manish.jpg',
+    phone: '+917477494304',
+    email: 'maitimanish1924@gmail.com',
+    linkedin: 'https://www.linkedin.com/in/manish-maiti/',
+  },
+
+  {
+    id: 'anindya',
+    name: 'Anindya Bhattacharya',
+    role: 'Data Visualization & Power BI Dashboards',
+    focus: 'Designs interactive Power BI dashboards and transforms intricate data layers into impactful, intuitive visual experiences.',
+    stack: ['Power BI', 'Data Visualization', 'Dashboard Design', 'DAX', 'Analytics'],
+    node: '03',
+    photo: '/anindya.jpg',
+    phone: '+919547405451',
+    email: 'anindyabhattacharya477@gmail.com',
+    linkedin: 'https://in.linkedin.com/in/anindya-bhattacharya-01912a42a',
+  },
+
+  {
+    id: 'suman',
+    name: 'Suman Kumar Das',
+    role: 'Power BI Data Modeling & Data Visualization',
+    focus: 'Architects robust Power BI data models and creates dynamic, high-impact data visualizations that drive strategic decisions.',
+    stack: ['Power BI', 'Data Modeling', 'Data Visualization', 'DAX', 'SQL'],
+    node: '04',
+    photo: '/suman.jpg',
+    phone: '+916295868348',
+    email: 'das786390@gmail.com',
+    linkedin: 'https://www.linkedin.com/in/suman-kumar-das-72796828b',
+  },
+
+  {
+    id: 'dipankar',
+    name: 'Dipankar Mondal',
+    role: 'Power BI Dashboard Design & Report Documentation',
+    focus: 'Specializes in Power BI dashboard design, comprehensive report paper preparation, and structured executive presentations.',
+    stack: ['Power BI', 'Dashboard Design', 'Report Preparation', 'DAX', 'Excel'],
+    node: '05',
+    photo: '/dipankar.jpg',
+    phone: '+917407756486',
+    email: 'dm3543679@gmail.com',
+    linkedin: 'https://www.linkedin.com/in/dipankar-mondal-58905b43b/',
+  },
+]
+

@@ -1,0 +1,112 @@
+.wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-3);
+  vertical-align: middle;
+  user-select: none;
+}
+
+/* Vertical variant: SVG above, wordmark below */
+.wrapVertical {
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-4);
+  text-align: center;
+}
+
+.markSvg {
+  overflow: visible;
+  filter: drop-shadow(0 2px 8px rgba(74, 127, 232, 0.25));
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hasGlow {
+  filter: drop-shadow(0 0 12px rgba(40, 224, 176, 0.35)) drop-shadow(0 2px 8px rgba(74, 127, 232, 0.3));
+}
+
+.wrap:hover .markSvg {
+  transform: translateY(-1px) scale(1.03);
+}
+
+.aura {
+  animation: auraPulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes auraPulse {
+  0% {
+    opacity: 0.4;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+.centralCore {
+  filter: drop-shadow(0 0 6px var(--signal));
+}
+
+.wordmarkGroup {
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.brandTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--paper);
+  text-transform: uppercase;
+}
+
+.synapseText {
+  background: linear-gradient(135deg, #ffffff 30%, var(--paper-dim) 70%, var(--slate) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.accentDot {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--signal);
+  box-shadow: 0 0 8px var(--signal);
+}
+
+.analyticsText {
+  font-family: var(--font-mono);
+  font-size: 0.48em;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  color: var(--slate);
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
+.wrap:hover .synapseText {
+  background: linear-gradient(135deg, #ffffff 0%, var(--signal) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.wrap:hover .analyticsText {
+  color: var(--accent);
+}
+
+/* Emblem / Mark variants */
+.mark .wordmarkGroup {
+  display: none;
+}
+
+.emblem {
+  background: rgba(16, 20, 29, 0.7);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--ink-line);
+}

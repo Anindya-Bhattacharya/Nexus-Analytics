@@ -1,0 +1,212 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-5);
+}
+
+@media (max-width: 1080px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
+.card {
+  border: 1px solid var(--ink-line);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-7) var(--sp-6);
+  position: relative;
+  overflow: hidden;
+  transition: border-color var(--dur-med) var(--ease-signature), transform var(--dur-med) var(--ease-signature);
+}
+
+.card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+.card:hover .hexDeco {
+  transform: rotate(20deg) scale(1.08);
+  opacity: 0.6;
+}
+
+.hexDeco {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  opacity: 0.25;
+  transition: transform var(--dur-slow) var(--ease-signature), opacity var(--dur-slow) var(--ease-signature);
+}
+
+.node {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--slate-dim);
+}
+
+.avatar {
+  width: 76px;
+  height: 76px;
+  border-radius: var(--radius-md);
+  background: var(--accent-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-lg);
+  color: var(--accent);
+  margin: var(--sp-5) 0 var(--sp-5);
+}
+
+/* Real photo display */
+.photoWrap {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  margin: var(--sp-5) 0 var(--sp-4);
+}
+
+.photo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 2px solid var(--signal);
+  position: relative;
+  z-index: 2;
+  display: block;
+}
+
+.photoGlow {
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(40, 224, 176, 0.5);
+  background: transparent;
+  z-index: 1;
+  animation: photoAura 3s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes photoAura {
+  0%  { opacity: 0.4; box-shadow: 0 0 6px rgba(40, 224, 176, 0.3); }
+  100% { opacity: 1;  box-shadow: 0 0 14px rgba(40, 224, 176, 0.6); }
+}
+
+/* Contact row */
+.contactRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-4);
+  padding: var(--sp-3) var(--sp-4);
+  background: rgba(16, 20, 29, 0.6);
+  border: 1px solid var(--ink-line);
+  border-radius: var(--radius-md);
+}
+
+.contactLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--font-mono);
+  font-size: 0.67rem;
+  color: var(--slate);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.contactLink:hover {
+  color: var(--signal);
+}
+
+.contactLink svg {
+  flex-shrink: 0;
+  color: var(--signal);
+}
+
+.card h3 {
+  font-size: var(--fs-lg);
+  margin-bottom: var(--sp-1);
+}
+
+.role {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--signal);
+  letter-spacing: 0.02em;
+  display: block;
+  margin-bottom: var(--sp-4);
+}
+
+.focus {
+  color: var(--slate);
+  font-size: var(--fs-sm);
+  line-height: 1.65;
+  margin-bottom: var(--sp-5);
+}
+
+.stackRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  padding-top: var(--sp-5);
+  border-top: 1px solid var(--ink-line);
+}
+
+.stackTag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  padding: var(--sp-1) var(--sp-3);
+  border: 1px solid var(--ink-line);
+  border-radius: 100px;
+  color: var(--slate);
+}
+
+/* ---- How we work together strip ---- */
+.processRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-6);
+}
+
+@media (max-width: 780px) {
+  .processRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+.processItem {
+  text-align: left;
+}
+
+.processNode {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--signal);
+  display: block;
+  margin-bottom: var(--sp-3);
+}
+
+.processItem h3 {
+  font-size: var(--fs-md);
+  font-weight: 500;
+  margin-bottom: var(--sp-2);
+}
+
+.processItem p {
+  color: var(--slate);
+  font-size: var(--fs-sm);
+}

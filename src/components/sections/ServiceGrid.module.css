@@ -1,0 +1,64 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--ink-line);
+  border: 1px solid var(--ink-line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+@media (max-width: 780px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: var(--ink-raised);
+  padding: var(--sp-7) var(--sp-6);
+  transition: background var(--dur-fast) var(--ease-signature);
+}
+
+.card:hover {
+  background: #141924;
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--sp-6);
+}
+
+.node {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--slate-dim);
+}
+
+.card h3 {
+  font-size: var(--fs-lg);
+  font-weight: 500;
+  margin-bottom: var(--sp-3);
+}
+
+.stackRow {
+  display: flex;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+  margin-top: var(--sp-5);
+  padding-top: var(--sp-4);
+  border-top: 1px dashed var(--ink-line);
+}
+
+.stackTag {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--signal);
+  background: var(--signal-soft);
+  padding: 2px 8px;
+  border-radius: 100px;
+  border: 1px solid rgba(40, 224, 176, 0.2);
+}
+

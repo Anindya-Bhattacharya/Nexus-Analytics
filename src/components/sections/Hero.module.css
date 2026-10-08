@@ -1,0 +1,203 @@
+.hero {
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  padding-top: var(--nav-height);
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--sp-8);
+  align-items: center;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-7);
+  }
+}
+
+.copy h1 {
+  font-size: var(--fs-4xl);
+  margin-top: var(--sp-4);
+}
+
+@media (max-width: 900px) {
+  .copy h1 {
+    font-size: var(--fs-3xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .copy h1 {
+    font-size: 2.6rem;
+  }
+}
+
+.copy .lead {
+  margin-top: var(--sp-5);
+  font-size: var(--fs-md);
+  color: var(--slate);
+  max-width: 480px;
+}
+
+.pillarRow {
+  display: flex;
+  gap: var(--sp-2);
+  margin-top: var(--sp-4);
+  flex-wrap: wrap;
+}
+
+.pillarBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--paper);
+  background: rgba(16, 20, 29, 0.7);
+  border: 1px solid var(--ink-line);
+  padding: 4px 10px;
+  border-radius: 100px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.pillarBadge:hover {
+  border-color: var(--signal);
+  transform: translateY(-1px);
+}
+
+.ctaRow {
+  display: flex;
+  gap: var(--sp-4);
+  margin-top: var(--sp-6);
+  flex-wrap: wrap;
+}
+
+.stack {
+  display: flex;
+  gap: var(--sp-6);
+  margin-top: var(--sp-8);
+  padding-top: var(--sp-6);
+  border-top: 1px solid var(--ink-line);
+  flex-wrap: wrap;
+}
+
+.stackItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.stackNum {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  color: var(--paper);
+}
+
+.stackLabel {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--slate-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.eyebrowWrap {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+/* ---- Visual: Large AnimatedLogo (same as About page) ---- */
+.visual {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-6) 0;
+}
+
+.heroLogo {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-4);
+}
+
+@media (max-width: 900px) {
+  .visual {
+    padding: var(--sp-4) 0;
+  }
+}
+
+
+.visualSvg {
+  width: 100%;
+  height: 100%;
+}
+
+.pulseDot {
+  filter: drop-shadow(0 0 8px var(--signal));
+}
+
+.visualBadge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(16, 20, 29, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--ink-line);
+  border-radius: var(--radius-md);
+  padding: var(--sp-3) var(--sp-4);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  user-select: none;
+}
+
+.badgePulseRing {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--signal);
+  box-shadow: 0 0 10px var(--signal);
+  animation: badgeGlow 2s infinite alternate;
+}
+
+@keyframes badgeGlow {
+  0% { transform: scale(0.85); opacity: 0.7; }
+  100% { transform: scale(1.2); opacity: 1; }
+}
+
+.badgeText {
+  display: flex;
+  flex-direction: column;
+}
+
+.badgeTitle {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--paper);
+}
+
+.badgeSub {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--signal);
+}
+

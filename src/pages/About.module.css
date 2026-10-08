@@ -1,0 +1,133 @@
+.storyGrid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: var(--sp-8);
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .storyGrid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-6);
+  }
+}
+
+.storyCopy p {
+  color: var(--slate);
+  font-size: var(--fs-md);
+  line-height: 1.75;
+  margin-bottom: var(--sp-5);
+}
+
+.storyCopy p:last-child {
+  margin-bottom: 0;
+}
+
+.storyCopy strong {
+  color: var(--paper);
+  font-weight: 600;
+}
+
+.statCard {
+  border: 1px solid var(--ink-line);
+  border-radius: var(--radius-md);
+  padding: var(--sp-6);
+}
+
+.statRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: var(--sp-4) 0;
+  border-bottom: 1px solid var(--ink-line);
+}
+
+.statRow:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.statRow:first-child {
+  padding-top: 0;
+}
+
+.statLabel {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--slate-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.statValue {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  color: var(--paper);
+}
+
+/* ---- Values ---- */
+.valuesList {
+  display: flex;
+  flex-direction: column;
+}
+
+.valueRow {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: var(--sp-6);
+  padding: var(--sp-6) 0;
+  border-bottom: 1px solid var(--ink-line);
+}
+
+.valueRow:first-child {
+  border-top: 1px solid var(--ink-line);
+}
+
+@media (max-width: 640px) {
+  .valueRow {
+    grid-template-columns: 1fr;
+    gap: var(--sp-3);
+  }
+}
+
+.valueNode {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--signal);
+}
+
+.valueRow h3 {
+  font-size: var(--fs-lg);
+  font-weight: 500;
+  margin-bottom: var(--sp-2);
+}
+
+.valueRow p {
+  color: var(--slate);
+  max-width: 560px;
+}
+
+/* ---- Stack ---- */
+.stackGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+}
+
+.stackPill {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-5);
+  border: 1px solid var(--ink-line);
+  border-radius: 100px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--slate);
+  transition: border-color var(--dur-fast) var(--ease-signature), color var(--dur-fast) var(--ease-signature);
+}
+
+.stackPill:hover {
+  border-color: var(--accent);
+  color: var(--paper);
+}

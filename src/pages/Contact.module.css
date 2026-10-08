@@ -1,0 +1,325 @@
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 0.85fr;
+  gap: var(--sp-8);
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: var(--sp-7);
+  }
+}
+
+/* ---- Form ---- */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.field label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--slate-dim);
+}
+
+.field input,
+.field select,
+.field textarea {
+  background: var(--ink-raised);
+  border: 1px solid var(--ink-line);
+  border-radius: var(--radius-sm);
+  padding: var(--sp-4);
+  color: var(--paper);
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  transition: border-color var(--dur-fast) var(--ease-signature);
+  width: 100%;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--accent);
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--slate-dim);
+}
+
+.row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-5);
+}
+
+@media (max-width: 560px) {
+  .row2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.errorText {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: #E8674A;
+}
+
+.fieldError input,
+.fieldError select,
+.fieldError textarea {
+  border-color: #E8674A;
+}
+
+.submitRow {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-5);
+  margin-top: var(--sp-2);
+}
+
+.submitBtn {
+  min-width: 160px;
+  justify-content: center;
+}
+
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.successBox {
+  border: 1px solid var(--signal);
+  background: rgba(16, 20, 29, 0.95);
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius-md);
+  padding: var(--sp-7) var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(40, 224, 176, 0.15);
+}
+
+.successHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--sp-2);
+}
+
+.ticketBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--signal);
+  background: var(--signal-soft);
+  border: 1px solid rgba(40, 224, 176, 0.3);
+  padding: 4px 12px;
+  border-radius: 100px;
+}
+
+.ticketDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--signal);
+  box-shadow: 0 0 8px var(--signal);
+  animation: ticketPulse 1.8s infinite alternate;
+}
+
+@keyframes ticketPulse {
+  0% { transform: scale(0.8); opacity: 0.6; }
+  100% { transform: scale(1.3); opacity: 1; }
+}
+
+.successBox h3 {
+  font-size: var(--fs-lg);
+  color: var(--paper);
+  font-weight: 600;
+}
+
+.successBox p {
+  color: var(--slate);
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+}
+
+.successBox code {
+  color: var(--signal);
+  font-family: var(--font-mono);
+  background: rgba(40, 224, 176, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.receiptGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-3);
+  margin-top: var(--sp-2);
+  padding: var(--sp-4);
+  background: var(--ink-raised);
+  border: 1px solid var(--ink-line);
+  border-radius: var(--radius-sm);
+}
+
+@media (max-width: 640px) {
+  .receiptGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.receiptItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.receiptLabel {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--slate-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.receiptVal {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--paper);
+  word-break: break-all;
+}
+
+/* ---- Side panel ---- */
+.sidePanel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+
+.infoCard {
+  border: 1px solid var(--ink-line);
+  border-radius: var(--radius-md);
+  padding: var(--sp-6);
+}
+
+.infoLabel {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--slate-dim);
+  margin-bottom: var(--sp-3);
+  display: block;
+}
+
+.infoValue {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  color: var(--paper);
+}
+
+.infoValue a {
+  color: var(--accent);
+  transition: color var(--dur-fast) var(--ease-signature);
+}
+
+.infoValue a:hover {
+  color: var(--signal);
+}
+
+.teamMiniRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  margin-top: var(--sp-4);
+}
+
+.teamMiniItem {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.teamMiniAvatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+/* Real photo variant */
+.teamMiniPhotoWrap {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+
+.teamMiniPhoto {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 1.5px solid var(--signal);
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+.teamMiniPhotoWrap::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid rgba(40, 224, 176, 0.45);
+  background: transparent;
+  pointer-events: none;
+  z-index: 1;
+  animation: miniGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes miniGlow {
+  0%  { opacity: 0.4; box-shadow: 0 0 5px rgba(40, 224, 176, 0.25); }
+  100% { opacity: 1;   box-shadow: 0 0 12px rgba(40, 224, 176, 0.55); }
+}
+
+.teamMiniName {
+  font-size: var(--fs-sm);
+  color: var(--paper);
+  display: block;
+}
+
+.teamMiniRole {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--slate-dim);
+}
+

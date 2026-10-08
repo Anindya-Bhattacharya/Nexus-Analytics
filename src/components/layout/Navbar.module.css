@@ -1,0 +1,529 @@
+.navWrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  transition: all 0.35s var(--ease-signature);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  background: rgba(7, 9, 14, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.navWrap.scrolled {
+  background: rgba(7, 9, 14, 0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--ink-line-bright);
+  box-shadow: 0 12px 36px -10px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-md);
+  letter-spacing: -0.01em;
+  color: var(--paper);
+  z-index: 101;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-7);
+}
+
+@media (max-width: 900px) {
+  .links {
+    display: none;
+  }
+}
+
+.link {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-1);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--slate);
+  padding: var(--sp-2) 0;
+  transition: color var(--dur-fast) var(--ease-signature);
+}
+
+.link:hover {
+  color: var(--paper);
+}
+
+.linkActive {
+  color: var(--paper);
+}
+
+.linkNode {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--signal);
+}
+
+.underline {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: var(--accent);
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+@media (max-width: 900px) {
+  .cta .ctaBtn,
+  .cta .loginNavBtn {
+    display: none;
+  }
+}
+
+/* User Profile Chip */
+.userProfileWrapper {
+  position: relative;
+}
+
+.userChipBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 4px 12px 4px 6px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--ink-line);
+  border-radius: 30px;
+  color: var(--paper);
+  transition: all var(--dur-fast) var(--ease-signature);
+}
+
+.userChipBtn:hover {
+  background: rgba(74, 127, 232, 0.12);
+  border-color: var(--accent);
+}
+
+.userAvatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid var(--signal);
+}
+
+.userName {
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  font-family: var(--font-body);
+  max-width: 110px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dropdownCaret {
+  font-size: 0.7rem;
+  color: var(--slate);
+}
+
+.userDropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 240px;
+  background: var(--ink-raised);
+  border: 1px solid var(--ink-line);
+  border-radius: var(--radius-md);
+  padding: var(--sp-3);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  z-index: 200;
+}
+
+.dropdownHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--sp-2);
+}
+
+.dropdownName {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--paper);
+}
+
+.dropdownEmail {
+  font-size: 0.7rem;
+  color: var(--slate);
+}
+
+.dropdownBadge {
+  font-size: 0.65rem;
+  font-family: var(--font-mono);
+  color: var(--signal);
+  margin-top: 4px;
+}
+
+.dropdownDivider {
+  height: 1px;
+  background: var(--ink-line);
+  margin: var(--sp-2) 0;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: var(--sp-2) var(--sp-3);
+  font-size: var(--fs-xs);
+  color: var(--slate);
+  border-radius: var(--radius-sm);
+  transition: all var(--dur-fast);
+  text-align: left;
+}
+
+.dropdownItem:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--paper);
+}
+
+.logoutItem:hover {
+  background: rgba(234, 67, 53, 0.12);
+  color: #FF6B6B;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  z-index: 101;
+  transition: all var(--dur-fast) ease;
+}
+
+.burger:hover,
+.burger:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 900px) {
+  .burger {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .userName,
+  .dropdownCaret {
+    display: none;
+  }
+  .userChipBtn {
+    padding: 3px;
+    border-radius: 50%;
+  }
+}
+
+.burgerBar {
+  width: 22px;
+  height: 2px;
+  background: var(--paper);
+  border-radius: 2px;
+  transition: transform var(--dur-fast) var(--ease-signature), opacity var(--dur-fast) var(--ease-signature);
+}
+
+.burgerOpen .burgerBar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.burgerOpen .burgerBar:nth-child(2) {
+  opacity: 0;
+}
+
+.burgerOpen .burgerBar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ─── High-Performance Full-Screen Mobile Drawer via Portal ──────────────── */
+.mobileDrawerBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 7, 10, 0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 99999;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mobileDrawer {
+  width: 100%;
+  max-width: 360px;
+  height: 100%;
+  background: rgba(11, 14, 20, 0.98);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  box-shadow: -15px 0 50px rgba(0, 0, 0, 0.85);
+}
+
+@media (max-width: 480px) {
+  .mobileDrawer {
+    max-width: 100%;
+    border-left: none;
+  }
+}
+
+.drawerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sp-4) var(--sp-5);
+  border-bottom: 1px solid var(--ink-line);
+  min-height: var(--nav-height);
+}
+
+.drawerBrand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.drawerCloseBtn {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: var(--paper);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all var(--dur-fast) ease;
+}
+
+.drawerCloseBtn:hover,
+.drawerCloseBtn:active {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: var(--signal);
+  color: #00E5FF;
+}
+
+.drawerScrollBody {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+
+.drawerUserCard {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--ink-line);
+  border-radius: var(--radius-md);
+}
+
+.drawerUserAvatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--signal);
+  box-shadow: 0 0 12px rgba(40, 224, 176, 0.35);
+}
+
+.drawerUserInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.drawerUserName {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--paper);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.drawerUserHandle {
+  font-size: 0.72rem;
+  color: var(--slate);
+  font-family: var(--font-mono);
+}
+
+.drawerUserBadge {
+  font-size: 0.62rem;
+  font-family: var(--font-mono);
+  color: var(--signal);
+  margin-top: 2px;
+}
+
+.drawerNav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.drawerLink {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: 13px 16px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--slate);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+  transition: all var(--dur-fast);
+}
+
+.drawerLink:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--paper);
+}
+
+.drawerLinkActive {
+  background: rgba(74, 127, 232, 0.12);
+  border-color: rgba(74, 127, 232, 0.25);
+  border-left: 3px solid var(--signal);
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.drawerLinkNode {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--signal);
+}
+
+.drawerLinkLabel {
+  flex: 1;
+}
+
+.drawerLinkArrow {
+  font-size: 0.9rem;
+  color: var(--ink-line);
+  transition: transform var(--dur-fast);
+}
+
+.drawerLink:hover .drawerLinkArrow,
+.drawerLinkActive .drawerLinkArrow {
+  color: var(--signal);
+  transform: translateX(4px);
+}
+
+.drawerActions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  margin-top: auto;
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--ink-line);
+}
+
+.drawerCtaBtn {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px;
+  font-size: var(--fs-sm);
+}
+
+.drawerAuthGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.drawerAuthBtn {
+  width: 100%;
+  justify-content: center;
+  font-size: var(--fs-xs);
+  padding: 11px;
+}
+
+.drawerLogoutBtn {
+  width: 100%;
+  justify-content: center;
+  font-size: var(--fs-xs);
+  padding: 11px;
+  border-color: rgba(234, 67, 53, 0.3) !important;
+  color: #FF7B7B !important;
+}
+
+.drawerLogoutBtn:hover {
+  background: rgba(234, 67, 53, 0.12) !important;
+}
+
+.drawerFooterInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.65rem;
+  font-family: var(--font-mono);
+  color: var(--slate);
+  padding-top: var(--sp-2);
+}
+
+.telemetryDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--signal);
+  box-shadow: 0 0 8px var(--signal);
+}
+
+/* Hide Sync to Mobile on mobile screens */
+@media (max-width: 768px), (pointer: coarse) and (max-width: 1024px) {
+  .syncMobileDropdownItem {
+    display: none !important;
+  }
+}
+
